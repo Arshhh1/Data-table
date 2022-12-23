@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #myTable tr.header, #myTable tr:hover{
+      background-color: #9cbe8c;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center; text-transform: uppercase; color:green;">My Friends</h2>
+<center><table id="myTable" border="4" cellpadding="10">
+  <input type="text" name="" id="myInput" placeholder="names...." style="margin:20px 0px; width:30%;" onkeyup="searchFun()"/>
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:30%;">Degree</th>
+    <th style="width:30%;">Profession</th>
+  </tr>
+  <tr> 
+    <td> Abhishek</td>
+    <td>MCS</td>
+    <td> Full stack Developer</td>
+  </tr>
+  <td> Arsh</td>
+  <td>BBA</td>
+  <td>Hr manager</td>
+</tr>
+<td> Vishal</td>
+<td>BCS</td>
+<td> Front End Developer</td>
+</tr>
+<td> Prithvi</td>
+<td>MCS</td>
+<td> Full stack Developer</td>
+</tr>
+<tr> 
+  <td>Abhinav</td>
+  <td>MCS</td>
+  <td> Full stack Developer</td>
+</tr>
+<td>Dhruv</td>
+<td>MCA</td>
+<td> Full stack Developer</td>
+</tr>
+<td> Devendra</td>
+<td>BCS</td>
+<td> Full stack Developer</td>
+</tr>
+<td>Manish</td>
+<td>MCS</td>
+<td> Full stack Developer</td>
+</tr>
+</table></center>
+<script>
+  const searchFun=()=>{
+    let filter=document.getElementById('myInput').value.toUpperCase();
+    let myTable=document.getElementById('myTable');
+    let tr=myTable.getElementsByTagName('tr');
+    for(var i=0; i<tr.length; i++){
+      let td=tr[i].getElementsByTagName('td')[0];
+      if(td){
+        let textvalue=td.textContent || td.innerHTML;
+        if(textvalue.toUpperCase().indexOf(filter)> -1){
+          tr[i].style.display="";
+      }
+      else{
+        tr[i].style.display="none";
+      }
+
+    }
+
+  }
+}
+</script>
+</body>
+</html>
